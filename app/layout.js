@@ -2,8 +2,8 @@ import "./globals.css";
 
 // Altere aqui o título e a descrição da aba do navegador.
 export const metadata = {
-  title: "Analisador de Texto",
-  description: "Uma página simples para analisar textos.",
+  title: "Detetive da Vó",
+  description: "Ferramenta protegida com login por e-mail e senha.",
 };
 
 export default function RootLayout({ children }) {
