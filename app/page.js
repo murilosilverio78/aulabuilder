@@ -15,7 +15,7 @@ export default function Home() {
     <main className="pagina">
       <section className="painel">
         {/* Edite os textos principais nesta área. */}
-        <h1>Analisador de Texto</h1>
+        <h1>Detetive da Vó</h1>
         <p className="subtitulo">
           Digite ou cole seu texto abaixo e clique em analisar.
         </p>
