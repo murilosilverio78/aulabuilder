@@ -10,27 +10,15 @@
   --raio: 14px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  min-height: 100%;
-}
-
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
 body {
   margin: 0;
   background: var(--cor-fundo);
   color: var(--cor-texto);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-button,
-textarea {
-  font: inherit;
-}
-
+button, textarea, input { font: inherit; }
 .pagina {
   min-height: 100vh;
   display: flex;
@@ -38,7 +26,6 @@ textarea {
   justify-content: center;
   padding: 40px 20px;
 }
-
 .painel {
   width: 100%;
   max-width: 760px;
@@ -48,45 +35,34 @@ textarea {
   border-radius: var(--raio);
   box-shadow: 0 16px 40px rgb(24 34 48 / 7%);
 }
-
 h1 {
   margin: 0;
   font-size: clamp(2.2rem, 6vw, 3.5rem);
   line-height: 1.1;
   letter-spacing: -0.04em;
 }
-
 .subtitulo {
   margin: 14px 0 30px;
   color: var(--cor-secundaria);
   font-size: 1.05rem;
   line-height: 1.6;
 }
-
-.rotulo {
-  display: block;
-  margin-bottom: 9px;
-  font-weight: 700;
-}
-
-textarea {
+.rotulo { display: block; margin: 16px 0 9px; font-weight: 700; }
+textarea, .form-login input {
   display: block;
   width: 100%;
-  min-height: 160px;
   padding: 14px 16px;
   color: var(--cor-texto);
   background: #fff;
   border: 1px solid var(--cor-borda);
   border-radius: 10px;
-  resize: vertical;
   line-height: 1.5;
 }
-
-textarea:focus {
+textarea { min-height: 160px; resize: vertical; }
+textarea:focus, .form-login input:focus {
   outline: 3px solid rgb(79 70 229 / 18%);
   border-color: var(--cor-destaque);
 }
-
 button {
   margin-top: 16px;
   padding: 12px 22px;
@@ -98,45 +74,45 @@ button {
   cursor: pointer;
   transition: background 150ms ease, transform 150ms ease;
 }
-
-button:hover {
-  background: var(--cor-destaque-hover);
-}
-
-button:active {
-  transform: translateY(1px);
-}
-
-.area-resposta {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--cor-borda);
-}
-
-.area-resposta h2 {
-  margin: 0 0 12px;
-  font-size: 1.15rem;
-}
-
-.vazio,
-.texto-resposta {
+button:hover { background: var(--cor-destaque-hover); }
+button:active { transform: translateY(1px); }
+button:disabled { opacity: .65; cursor: wait; }
+.area-resposta { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--cor-borda); }
+.area-resposta h2 { margin: 0 0 12px; font-size: 1.15rem; }
+.vazio, .texto-resposta {
   margin: 0;
   color: var(--cor-secundaria);
   line-height: 1.65;
   overflow-wrap: anywhere;
 }
-
-.texto-resposta {
-  color: var(--cor-texto);
-  white-space: pre-wrap;
+.texto-resposta { color: var(--cor-texto); white-space: pre-wrap; }
+.topo-conta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 12px 24px;
+  color: #fff;
+  background: rgb(36 12 78 / 30%);
+  overflow-wrap: anywhere;
 }
-
+.topo-conta strong { font-weight: 700; }
+.acoes-conta { display: flex; align-items: center; gap: 10px; }
+.botao-sair { margin: 0; padding: 9px 16px; background: #fff; color: #4c1d95; }
+.botao-sair:hover { background: #ede9fe; }
+.erro-sair { font-size: .85rem; }
+.pagina-login { min-height: 100vh; }
+.painel-login { max-width: 480px; }
+.etiqueta { margin: 0 0 12px; color: var(--cor-destaque); font-size: .75rem; font-weight: 800; letter-spacing: .12em; }
+.form-login input { margin-bottom: 4px; }
+.form-login button { width: 100%; }
+.form-login .botao-secundario { margin-top: 10px; color: var(--cor-destaque); background: #eef2ff; }
+.form-login .botao-secundario:hover { background: #e0e7ff; }
+.mensagem { margin: 16px 0 0; padding: 12px; border-radius: 8px; font-size: .92rem; line-height: 1.5; }
+.mensagem-erro { color: #991b1b; background: #fef2f2; border: 1px solid #fecaca; }
+.mensagem-sucesso { color: #166534; background: #f0fdf4; border: 1px solid #bbf7d0; }
 @media (max-width: 600px) {
-  .painel {
-    padding: 26px 20px;
-  }
-
-  .pagina {
-    padding: 20px 12px;
-  }
+  .painel { padding: 26px 20px; }
+  .pagina { padding: 20px 12px; }
+  .topo-conta { align-items: flex-start; flex-direction: column; padding: 14px; gap: 8px; }
 }
