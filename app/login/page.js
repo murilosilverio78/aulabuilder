@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { createClient } from "../../utils/supabase/client";
 
 export default function LoginPage() {
@@ -11,7 +11,6 @@ export default function LoginPage() {
   const [mensagem, setMensagem] = useState("");
   const [carregando, setCarregando] = useState(false);
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   async function entrar(event) {
     event.preventDefault();
@@ -32,8 +31,7 @@ export default function LoginPage() {
       return;
     }
 
-    const destino = searchParams.get("redirectedFrom");
-    router.replace(destino && destino.startsWith("/") ? destino : "/");
+    router.replace("/");
     router.refresh();
   }
 
